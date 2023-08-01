@@ -5,7 +5,6 @@ import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import ren.dy.entitiy.LoanInput;
 import ren.dy.entitiy.MonthlyPayment;
 import ren.dy.service.LoanCalculator;
 
@@ -13,7 +12,7 @@ import java.util.List;
 
 @Singleton
 @Path("/loan")
-public class GreetingResource {
+public class LoanResource {
     @Inject
     LoanCalculator loanCalculator;
 

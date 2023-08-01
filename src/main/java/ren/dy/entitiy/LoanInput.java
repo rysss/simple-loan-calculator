@@ -18,7 +18,6 @@ public class LoanInput {
         this.tanggalMulai = tanggalMulai;
         this.plafon = plafon;
 
-        System.out.println(cicilan);
     }
 
 

@@ -50,7 +50,7 @@ public class LoanInput {
         return plafon;
     }
 
-    public void setPlafond(BigDecimal plafon) {
+    public void setPlafon(BigDecimal plafon) {
         this.plafon = plafon;
     }
 }

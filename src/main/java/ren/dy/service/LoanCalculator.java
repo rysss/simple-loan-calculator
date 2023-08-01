@@ -31,13 +31,12 @@ public class LoanCalculator {
         LocalDate tanggalMulai = LocalDate.parse(input.getString("tanggalMulai","YYYY-mm-dd"));
         loanInput.setTanggalMulai(tanggalMulai);
 
-        BigDecimal sukuBunga = BigDecimal.valueOf(Integer.valueOf(input.getString("sukuBunga")));
+        BigDecimal sukuBunga = BigDecimal.valueOf(Double.valueOf(input.getString("sukuBunga")));
         loanInput.setSukuBunga(sukuBunga);
 
         BigDecimal plafon = BigDecimal.valueOf(Integer.valueOf(input.getString("plafon")));
-        loanInput.setPlafond(plafon);
+        loanInput.setPlafon(plafon);
 
-        //BigDecimal bungaBulanan = bungaTahunan.divide(BigDecimal.valueOf(12 * 100), 5, RoundingMode.HALF_UP);
         Double bungaBulananDouble = sukuBunga.doubleValue()/360*30/100;
         BigDecimal bungaBulanan =  BigDecimal.valueOf(bungaBulananDouble);
 

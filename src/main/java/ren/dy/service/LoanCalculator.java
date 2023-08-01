@@ -25,25 +25,25 @@ public class LoanCalculator {
         List<MonthlyPayment> monthlyPayments = new ArrayList<>();
         LoanInput loanInput = new LoanInput() ;
 
-        BigDecimal cicilan = BigDecimal.valueOf(Integer.valueOf(input.getString("cicilan")));
+        BigDecimal cicilan = BigDecimal.valueOf(Integer.parseInt(input.getString("cicilan")));
         loanInput.setCicilan(cicilan);
 
         LocalDate tanggalMulai = LocalDate.parse(input.getString("tanggalMulai","YYYY-mm-dd"));
         loanInput.setTanggalMulai(tanggalMulai);
 
-        BigDecimal sukuBunga = BigDecimal.valueOf(Double.valueOf(input.getString("sukuBunga")));
+        BigDecimal sukuBunga = BigDecimal.valueOf(Double.parseDouble(input.getString("sukuBunga")));
         loanInput.setSukuBunga(sukuBunga);
 
-        BigDecimal plafon = BigDecimal.valueOf(Integer.valueOf(input.getString("plafon")));
+        BigDecimal plafon = BigDecimal.valueOf(Double.parseDouble(input.getString("plafon")));
         loanInput.setPlafon(plafon);
 
-        Double bungaBulananDouble = sukuBunga.doubleValue()/360*30/100;
+        double bungaBulananDouble = sukuBunga.doubleValue()/360*30/100;
         BigDecimal bungaBulanan =  BigDecimal.valueOf(bungaBulananDouble);
 
         //Cicilan = Pokok pinjaman x suku bunga / 1- (1 + suku bunga)⁻ⁿ.
         BigDecimal numerator = bungaBulanan.multiply(plafon);
 
-        Double denominator = 1 - Math.pow((1 + bungaBulanan.doubleValue()),-cicilan.intValue());
+        double denominator = 1 - Math.pow((1 + bungaBulanan.doubleValue()),-cicilan.intValue());
 
         BigDecimal bayarBulanan = numerator.divide(BigDecimal.valueOf(denominator), 2, RoundingMode.HALF_UP);
 

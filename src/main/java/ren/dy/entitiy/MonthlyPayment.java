@@ -9,7 +9,6 @@ public class MonthlyPayment {
     private BigDecimal bayarBunga;
     private BigDecimal bayarPokok;
     private BigDecimal sisaPlafon;
-
     public MonthlyPayment(int bulan, LocalDate tanggalBayar, BigDecimal bayarBulanan, BigDecimal bayarBunga,
                           BigDecimal bayarPokok, BigDecimal sisaPlafon) {
         this.bulan = bulan;
@@ -23,18 +22,15 @@ public class MonthlyPayment {
     public int getBulan() {
         return bulan;
     }
-
     public LocalDate getTanggalBayar() {
         return tanggalBayar;
     }
-
     public BigDecimal getBayarBulanan(){
         return bayarBulanan;
     }
     public BigDecimal getBayarBunga(){
         return bayarBunga;
     }
-
     public BigDecimal getBayarPokok(){
         return bayarPokok;
     }
